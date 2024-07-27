@@ -13,4 +13,20 @@ public class Comment {
 		this.commentIndex = commentIndex;
 		this.commentWriter = commentWriter;
 	}
+	
+	public int getCommentIndex() {
+		return commentIndex;
+	}
+	
+	public String getCommentContent() {
+		return commentContent;
+	}
+	
+	public String getCommentWriter() {
+		return commentWriter;
+	}
+	
+	public String getCommentDate() {
+		return commentDate;
+	}
 }

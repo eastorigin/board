@@ -8,17 +8,17 @@ public class Post {
 	private String postDate;
 	private int hits;
 	private String postContent;
-	private Comment[] comment;
+	private Comment[] comments;
 	private boolean isDeleted;
 	
 	public Post(int postIndex, String title, String postWriter, String postDate, int hits, String postContent, Comment[] comment, boolean isDeleted) {
 		this.postIndex = postIndex;
-		this.title = title;
+		this.title = title.trim();
 		this.postWriter = postWriter;
 		this.postDate = postDate;
-		this.hits = hits;
+		this.hits = 0;
 		this.postContent = postContent;
-		this.comment = comment;
+		this.comments = new Comment[10];
 		this.isDeleted = isDeleted;
 	}
 	
@@ -47,10 +47,33 @@ public class Post {
 	}
 	
 	public Comment[] getComment() {
-		return comment;
+		return comments;
 	}
 	
-	private boolean getIsDeleted() {
+	boolean getIsDeleted() {
 		return isDeleted;
+	}
+	
+	public void addComment(Comment newComment) {
+		for(int i = 0; i < comments.length; i++) {
+			if(comments[i] == null) {
+				comments[i] = newComment;
+				return;
+			}
+		}
+		System.out.println("댓글을 10개 초과햐여 등록할 수 없습니다");
+	}
+	
+	public void increaseHits() {
+		this.hits++;
+	}
+	
+	public void deletePost() {
+		this.isDeleted = true;
+	}
+	
+	public void editPost(String newTitle, String newPostContent) {
+		this.title = newTitle.trim();
+		this.postContent = newPostContent;
 	}
 }
