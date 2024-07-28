@@ -16,7 +16,7 @@ public class Post {
 		this.title = title.trim();
 		this.postWriter = postWriter;
 		this.postDate = postDate;
-		this.hits = 0;
+		this.hits = hits;
 		this.postContent = postContent;
 		this.comments = new Comment[10];
 		this.isDeleted = isDeleted;
