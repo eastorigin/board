@@ -26,14 +26,14 @@ public class Main {
 			
 			if (number == 1) {
 				System.out.println("게시글 제목을 입력하세요");
-				String titile = scanner.nextLine();
+				String title = scanner.nextLine();
 				System.out.println("게시글 작성자를 입력하세요");
 				String writer = scanner.nextLine();
 				System.out.println("게시글 작성 날짜를 입력하세요");
 				String date = scanner.nextLine();
 				System.out.println("게시글 내용을 입력하세요");
 				String content = scanner.nextLine();
-				board.addPost(titile, writer, date, content);
+				board.addPost(title, writer, date, content);
 			}else if(number == 2) {
 				board.printAllPosts();
 			}else if(number == 3) {
